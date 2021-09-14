@@ -434,7 +434,7 @@ The tag SYM is given to non-alphabetic tokens which are pronounced and serve som
 The tag X is used for words that cannot be assigned a real or ‘linguistic’ part-of-speech category, either because we do not know it (garbled text, gibberish), or because it is not in Hebrew. The latter category encompasses only cases of true “code switching” or foreign text cited verbatim within Hebrew data; it does not include syntactically integrated use of loan words.
 
 ### Confusing cases
-####ADJ or NOUN?
+#### ADJ or NOUN?
 
 Nouns are sometimes used within adjective-like constructions, such as comparison. For such cases we retain the NOUN tag based on the underlying morphological category of the word, rather than the syntactix usage:
 
@@ -642,6 +642,165 @@ Adapted for Hebrew from Marie-Catherine de Marneffe, Christopher D. Manning, Joa
 ### Detailed Table of features by POS tag
 
 TABLE TO BE ADDED
+<table>
+    <tr>
+        <td>POS Tag</td>
+        <td>Feature</td>
+        <td>Values</td>
+        <td>Selected Examples (Invented and from HTB)</td>
+    </tr>
+    <tr>
+        <td>NOUN</td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>מנהלת</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc</td>
+        <td>אצן</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fem,Masc</td>
+        <td>עובדים/ות</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>עבודה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur</td>
+        <td>כדורים, עובדות, מעצבים/ות</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>(Dual)</td>
+        <td>(שבועיים, שנתיים, יומיים)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Cons</td>
+        <td>Construct State Forms: ילדי הגן</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Abbr</td>
+        <td>Yes</td>
+        <td>יו"ר, מנכ"ל, ח"כ</td>
+    </tr>
+    <tr>
+        <td>PROPN</td>
+        <td>Abbr</td>
+        <td>Yes</td>
+        <td>שב"כ, ימ"מ, צה"ל</td>
+    </tr>
+    <tr>
+        <td>ADJ</td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>בכירה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc</td>
+        <td>מהיר</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fem,Masc</td>
+        <td>גדול/ה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>קרוב</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur</td>
+        <td>רחוקים</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Cons</td>
+        <td>יפי נפש יפה = Lemma</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Abbr</td>
+        <td>Yes</td>
+        <td>תנ"כי</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Prefix</td>
+        <td>Yes</td>
+        <td>Modifying a NOUN: אנטי-קומוניסט, מולטי-מיליונר</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>NumType</td>
+        <td>Ord  </td>
+        <td>Ordinal numbers (ראשון, שני, שלישי, etc.) are tagged ADJ (default Lemma = Masc): זה היה שערו החמישי העונה בליגה. Also for Arabic numerals as ADJ: שחר פאר סיימה במקום ה-3 בעולם.</td>
+    </tr>
+    <tr>
+        <td>ADP</td>
+        <td>Case</td>
+        <td>Gen</td>
+        <td>Only for Genitive preposition: של</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Acc</td>
+        <td>Only for Accusative preposition: את</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Def</td>
+        <td>For cases of hidden definiteness: יצאתי לטייל בחצר</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>PronType</td>
+        <td>Art</td>
+        <td>For cases of hidden definiteness: יצאתי לטייל בחצר</td>
+    </tr>
+    <tr>
+        <td>DET</td>
+        <td>PronType</td>
+        <td>Art</td>
+        <td>Only for the definite article ה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Def</td>
+        <td>Def is only for the definite article ה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Cons</td>
+        <td>Cons is relevant for רוב, מעט, שאר, יתר, כול</td>
+    </tr>
+</table>
+
 
 ### Nominal Features
 #### Gender
