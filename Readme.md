@@ -498,152 +498,6 @@ In the following section, we outline the morphological features for each POS tag
 
 <table>
     <tr>
-        <td></td>
-        <td>Feature</td>
-        <td>Values</td>
-        <td>Relevant POS</td>
-    </tr>
-    <tr>
-        <td>pronominal type</td>
-        <td>PronType</td>
-        <td>ArtDem Emp Ind Int Prs</td>
-        <td>ADP, DET (ה) PRON</td>
-    </tr>
-    <tr>
-        <td>numeral type</td>
-        <td>NumType</td>
-        <td>Card Ord</td>
-        <td>NUM (Lemma=Fem) ADJ (Lemma=Masc)</td>
-    </tr>
-    <tr>
-        <td>possessive</td>
-        <td>Poss</td>
-        <td>Yes</td>
-        <td>PRON (clitic gen)</td>
-    </tr>
-    <tr>
-        <td>reflexive</td>
-        <td>Reflex</td>
-        <td>Yes</td>
-        <td>PRON</td>
-    </tr>
-    <tr>
-        <td>abbreviation</td>
-        <td>Abbr</td>
-        <td>Yes</td>
-        <td>NOUN, PROPN, ADJ, ADP</td>
-    </tr>
-    <tr>
-        <td>affixation</td>
-        <td>Prefix</td>
-        <td>Yes</td>
-        <td>ADJ (modifying NOUN) ADV (modifying ADJ,ADV,VERB)</td>
-    </tr>
-    <tr>
-        <td>wrong spelling</td>
-        <td>Typo</td>
-        <td>Yes</td>
-        <td>Any</td>
-    </tr>
-    <tr>
-        <td>correct form</td>
-        <td>CorrectForm</td>
-        <td>free value</td>
-        <td>Any (if Typo=Yes)</td>
-    </tr>
-    <tr>
-        <td>uncertainty</td>
-        <td>Uncertain</td>
-        <td>Yes</td>
-        <td>Any</td>
-    </tr>
-    <tr>
-        <td>gender</td>
-        <td>Gender</td>
-        <td>Fem Masc  Fem,Masc</td>
-        <td>AUX, ADJ, NOUN, NUM, PRON, VERB</td>
-    </tr>
-    <tr>
-        <td>number</td>
-        <td>Number</td>
-        <td>(Dual) Plur Sing</td>
-        <td>AUX, ADJ, NOUN, NUM (only for clear Number morphology), PRON, VERB</td>
-    </tr>
-    <tr>
-        <td>case</td>
-        <td>Case</td>
-        <td>Acc   Gen</td>
-        <td>ADP (את), PRON (clitic acc) ADP (של), PRON (clitic gen)</td>
-    </tr>
-    <tr>
-        <td>definiteness</td>
-        <td>Definite</td>
-        <td>Cons   Def</td>
-        <td>ADJ, DET, NOUN, NUM (CS form) ADP, DET (ה) PRON (as determiner)</td>
-    </tr>
-    <tr>
-        <td>verbal form</td>
-        <td>VerbForm</td>
-        <td>Inf Part   Vnoun</td>
-        <td>VERB  VERB (infinitive absolute in adverbial clauses)</td>
-    </tr>
-    <tr>
-        <td>verbal type</td>
-        <td>VerbType</td>
-        <td>Cop Mod</td>
-        <td>AUX, VERB</td>
-    </tr>
-    <tr>
-        <td>aspect</td>
-        <td>Aspect</td>
-        <td>Prog</td>
-        <td>VERB (only beinoni in היה+בינוני and in past progressive meaning)</td>
-    </tr>
-    <tr>
-        <td>mood</td>
-        <td>Mood</td>
-        <td>Imp   Irr</td>
-        <td>VERB (Imperative)  VERB (only beinoni in היה+בינוני and in contra-factual meaning)</td>
-    </tr>
-    <tr>
-        <td>tense</td>
-        <td>Tense</td>
-        <td>Fut Past Pres</td>
-        <td>VERB, AUX</td>
-    </tr>
-    <tr>
-        <td>voice</td>
-        <td>Voice</td>
-        <td>Act Mid Pass</td>
-        <td>VERB</td>
-    </tr>
-    <tr>
-        <td>polarity</td>
-        <td>Polarity</td>
-        <td>Neg Pos</td>
-        <td>ADV, AUX (cop), PRON (cop)</td>
-    </tr>
-    <tr>
-        <td>person</td>
-        <td>Person</td>
-        <td>1 2 3</td>
-        <td>AUX, PRON, VERB</td>
-    </tr>
-    <tr>
-        <td>verbal template</td>
-        <td>HebBinyan</td>
-        <td>HIFIL PAAL PIEL HUFAL PUAL HITPAEL NIFAL</td>
-        <td>VERB</td>
-    </tr>
-</table>
-
-Adapted for Hebrew from Marie-Catherine de Marneffe, Christopher D. Manning, Joakim Nivre, Daniel Zeman; Universal Dependencies. Computational Linguistics 2021; doi: https://doi.org/10.1162/coli_a_00402
-
-### Detailed Table of features by POS tag
-
-TABLE TO BE ADDED
-<table>
-    <tr>
         <td>POS Tag</td>
         <td>Feature</td>
         <td>Values</td>
@@ -799,8 +653,451 @@ TABLE TO BE ADDED
         <td>Cons</td>
         <td>Cons is relevant for רוב, מעט, שאר, יתר, כול</td>
     </tr>
+    <tr>
+        <td>PRON</td>
+        <td>PronType</td>
+        <td>Prs  </td>
+        <td>Personal Pronouns = היא, הם, אתן (Lemma: הוא) היא הודיעה כי הוועדה תגבש הצעת חוק בנושא העובדים הזרים.   Reflexive Pronouns (with ADP and in oblique position) = עצמה, עצמן, עצמכם (Lemma: עצמו) קשה להבין כיצד מנהיגים אלה לא שאלו את עצמם שאלה יסודית אחת.   As determiners, meaning the same one, morphologically similar to accusative pronouns, but unsegmented; Lemma:אותו ): היא מבוססת על אותו קרב המגננה שבו אירעו מעשי גבורה עילאיים, ועל קבלת החלטות קשות בתנאי קרב.  Other forms used as determiners meaning the whole/entire one (Lemma: כולו): למכבי תל אביב אין גם כיום שחקן שתמיד יצר את הפער בינו לליגה כולה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Dem</td>
+        <td>Demonstrative Pronouns = זו, אלה (Lemma: זה) טיעונים כאלה, שפעם היו מקובלים בין ליברלים בארה"ב, לא שמעתי כבר הרבה זמן.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Int  </td>
+        <td>Interrogative Pronouns = מי, מה   Main clause: במקום שבו שרים, חברי כנסת ואנשי ציבור משמיעים את אמרותיהם, מי זקוק לסאטירה.   Subordinate clause: מקסוול דרש לדווח לו מי הדליף את הנתונים הכספיים של ההוצאה לתקשורת.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Ind  </td>
+        <td>Indefinite Pronouns = כלשהו, איזושהי   במאה הזו נבחרו שני סנאטורים לנשיאים, ושלושה נשיאים אחרים כיהנו בסנאט בזמן כלשהו של הקריירה שלהם .   אין ספק כי יש כאן איזושהי אמירה מטאפיסית של היקום על מות האמת.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Emp  </td>
+        <td>Emphatic Pronouns (No ADP and often in determiner position) = עצמה, עצמן, עצמכם (Lemma: עצמו) גבולות מדיניים מפרידים בין ארצות, וגבולות אתניים מפרידים בתוך הארצות עצמן.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Case</td>
+        <td>Gen</td>
+        <td>Gen for possessive clitic pronouns: ילדיה = הילדים שלה</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Acc</td>
+        <td>Acc for accusative clitic pronouns: להכשילם = להכשיל אותם</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Def</td>
+        <td>Mainly for examples like ילדיה. Since we do not assign this feature to the nominal, we must mark somehow that the entire phrase is definite.   Accusative pronouns used as determiners meaning the same one: מדוע לפחות אין הם מפרסמים התנצלות והסברים, באותו תקציב שבו הם משתמשים כדי ליצור תדמית ציבורית חיובית?   Other forms used as determiners meaning the whole/entire one: אחרי עיתונאים יהיו אלה הפוליטיקאים , השוטרים והשופטים , והדבר יביא לקריסת המרקם החברתי כולו.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>יתר-על-כן, הריבית בישראל במיוחד על משכנתאות היא מהנמוכות ביותר בעולם, אם לא הנמוכה שבהן.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc</td>
+        <td>זהו כישלונו היחיד עד כה של המפכ"ל , שנגרם רק בגלל העובדה שהוא סמך יותר מדי על קציניו הבכירים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fem,Masc</td>
+        <td>The delimiter may vary or be missing altogether: אתם/ן מוזמניםות לפנות אליי בכל נושא. [Forms without explicit reference should not be assigned Gender, e.g., אליי here.]</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>רק אחר-כך נמצא כרטיס ביקור, ובו שמו ותוארו של גרוסבורד כמנהל מפעל פרטי.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur</td>
+        <td>על פי כל הדיווחים חלה בעשורים האחרונים ירידה תלולה בתמיכה בעבודות מחקר במדעי החברה שאין להן יישום מעשי מידי.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Poss</td>
+        <td>Yes</td>
+        <td>For possessive clitic pronouns: כלכלתה היתה שקועה במיתון קשה, בשעה שרוב המדינות האחרות בארה"ב נהנו משגשוג חסר תקדים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Person</td>
+        <td>1</td>
+        <td>לשם איזון הנושא, עליי לציין כי אני נמנה על ההורים שהביעו את הסכמתם לקיום הטיול.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>אם בכל זאת אתם רוצים סבסוד למחשבותיכם ולמעשיכם, עליכם להשיג אותו בדרך המיושנת.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>מתקבל הרושם שהיחידים במדינה הזו שאינם צריכים לחשוש מתוצאות מעשיהם הם הפוליטיקאים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Reflex</td>
+        <td>Yes</td>
+        <td>Coreference with the subject: היא עשתה זאת בעצמה   Coreference with the object: הוא אמר לה לעשות זאת בעצמה   The emphatic pronouns also receive this value: הקרב עצמו נמשך שעות   No explicit reference (predicate-embedded): תראו בעצמכם.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Polarity</td>
+        <td>Pos</td>
+        <td>Pronominal Copulas  (No PronType=Prs): כהונת מושל במדינה גדולה היא קרש קפיצה אל מרכז תשומת הלב הלאומית.</td>
+    </tr>
+    <tr>
+        <td>ADV</td>
+        <td>Prefix</td>
+        <td>Yes</td>
+        <td>Modifying an ADJ: דו-קוטבי, תלת-ספרתי, רב-לאומית ADV: חד-חד-ערכי  VERB: אי אפשר</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Polarity</td>
+        <td>Pos</td>
+        <td>Positive: כן, אני מסכים</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Neg  </td>
+        <td>Negative Adverbs: בלתי חוקי הוא לא התכוון לכך</td>
+    </tr>
+    <tr>
+        <td>NUM</td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>צעד זה של קופת חולים הכללית נעשה במסגרת המאמץ להחזיר אליה חברים שעזבו אותה בחמש השנים האחרונות.   Ambiguous forms – acc. to the context: שיעור האבטלה מתקרב לשמונה אחוזים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc  </td>
+        <td>איני יכולה שלא להתריס בפניו על משפט אחד בקטע הפתיחה של הכתבה.   Ambiguous forms – acc. to the context: כל רצוני היה שיאפשרו לי לאחר התמסרות של שמונה שנים לנתח גם במרכז חורב.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>Numerals are considered singular only when they have a contrast with a plural form. They should not receive this feature if no such contrast exists: זו אחת הסיבות לכך שמענקי מקארתור מבוקשים כל כך. (cp. אחדות)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur</td>
+        <td>Clear contrast (אלף-אלפים,מאה-מאות, עשר/ה-עשרות, מיליון-מיליונים)), Cp. Singular, מדיווח שהגיע אתמול למשרד התיירות בירושלים, ישתתפו במשלחת כמאה מראשי הקהילה . vs. Plural, משום כך, ראשית כל עליך לחשוב על קבלת תפקיד חשוב באחד ממאות הגופים הללו.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Definite</td>
+        <td>Cons</td>
+        <td>Some numerals have overt CS forms שני הילדים (שתיים = Lemma) אלפי המפגינים (אלף = Lemma) Cp. שלושת הכדורים with a distinct CS form (Lemma = שלוש) vs. שלוש המנהלות which has the same form as the bare numeral, but different pronunciation (shalosh vs. shlosh)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>NumType</td>
+        <td>Card</td>
+        <td>Cardinal numbers (אחת, שתיים, שלוש, etc.) are tagged NUM (default Lemma = Fem): נשיא אירלנד נבחר לשבע שנים. But not for Arabic numerals as NUM: לפני שהפסידה במשחק הרביעי, היא ניצחה ב-3 משחקים ברציפות.</td>
+    </tr>
+    <tr>
+        <td>AUX      </td>
+        <td>VerbType</td>
+        <td>Cop</td>
+        <td>Forms of היה: אתה מתבונן בנושא שיהיה בעל ערך לגיטימי למחקר, ובו בזמן יכבוש את דמיונו של פקיד התוכנית.   The inflected forms of הִנֵּה (הינו, הינה, הינם, הינן): מרכיב חשוב ביותר בתהליך קבלת החלטות הינו המידע. Inflected forms of אין only as pure copulas: תחנת הקלפי אינה מקום ההצבעה ההכרחי היחיד.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Mod</td>
+        <td>האם אתם יכולים להתעלות על כך?   שום קרן או חברה מסחרית לא תהיה מוכנה לתת לו מימון אם ייוודעו פרטיו.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Polarity</td>
+        <td>Pos</td>
+        <td>Forms of היה: המשבר במפרץ הפרסי לא היה נושא בחירות מרכזי באיובה.   The inflected forms of הִנֵּה (הינו, הינה, הינם, הינן): דיווח אמין הינו ערך יסודי חיוני ומקודש במשרד המשטרה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Neg</td>
+        <td>Assertion auxiliaries: האשמה אינה בשיטה או במדגם.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>מורשת הקרב שצה"ל אימץ כתוצאה מהקרב על מנזר סן סימון איננה מיתוס.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc</td>
+        <td>אם אתה מעדיף לפעול בלי איש ביניים, אתה יכול להקים ארגון משלך שלא למטרות רווח.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fem,Masc</td>
+        <td>את.ה יכול/ה להקים ארגון משלך שלא למטרות רווח.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>תחנת הקלפי שוב אינה מקום ההצבעה ההכרחי היחיד.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur</td>
+        <td>הדמוקרטים היו באווירת אופוריה, והניחו שמועמדם דוקאקיס לא יצטרך אפילו לרוץ לבית הלבן .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Person</td>
+        <td>1</td>
+        <td>מסתבר שהייתי תמים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>עם הרבה עץ, מכונת אספרסו עתיקה כמעט ושטח גן מקסים, הוא מסוג המקומות הפשוטים והמזמינים שהייתם מצפים למצוא בין גבעות טוסקאנה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td>זו הייתה התרברבות לא-דיסקרטית, ואין ספק שיימנע ממנה השנה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Tense</td>
+        <td>Past</td>
+        <td>הביקור הקצר היה רווי מתח ודרמטי .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Present</td>
+        <td>Inflected forms of אין only as pure copulas: תחנת הקלפי אינה מקום ההצבעה ההכרחי היחיד.  The inflected forms of הִנֵּה (הינו, הינה, הינם, הינן): תחנת הקלפי הינה מקום ההצבעה ההכרחי היחיד</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fut</td>
+        <td>מצב קופת ההתאחדות לספורט בהחלט יהיה פחות טוב, אם למרות הכל יממש ללקין את נסיעתו לאוסטרליה.</td>
+    </tr>
+    <tr>
+        <td>VERB</td>
+        <td>Gender</td>
+        <td>Fem</td>
+        <td>תופעה זו התבררה אתמול בוועדת העבודה והרווחה של הכנסת, שדנה בנושא העסקת עובדים זרים.  The inflected forms of יש (ישנו, ישנה, ישנם, ישנן):  בארצות הברים ישנן חבילות של מבחנים ומבדקים שנקבעו מראש.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Masc</td>
+        <td>החלטתי לקחת יוזמה ולטפל בבעיה בעצמי. We should not assign this feature when it is impossible to figure out the gender from the context.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fem,Masc</td>
+        <td>Overt mixed reference: א.נשים בחברה דיווחו שהםן מרוצים/ות.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Person</td>
+        <td>1</td>
+        <td>כהיסטוריון, הוא בוודאי רוצה שנתעד, נלמד ונשתדל להבין את הרקע שהוליד את התופעה הנאצית.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td>אבל אל תטרחו לדווח לשלטונות המקומיים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>3  </td>
+        <td>איש לא התכוון לכך .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Number</td>
+        <td>Sing</td>
+        <td>בחודש הבא, הוא יבקר את בני משפחתו בצרפת.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Plur  </td>
+        <td>עמדנו בתור במשך שעות.  The inflected forms of יש (ישנו, ישנה, ישנם, ישנן):  ישנם ויכוחים רבים על דרכי הטיפול ויעילותן</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Tense</td>
+        <td>Pres</td>
+        <td>Present (same form as Participles): הם מקבעים את אבני השפה אחת בצמוד לשנייה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Past</td>
+        <td>Past: בתקופה זו שימשה כמנהלת המחלקה לביטחון מידע.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Fut</td>
+        <td>Future: בסוף השנה יעלה לאקרנים סרטו התשיעי הבמאי קוונטין טרנטינו.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Voice</td>
+        <td>Act</td>
+        <td>Active voice refers to an action that the subject is performing or a state that the subject is in: היא למדה באוניברסיטת בוסטון.  בקצהו עומד מנזר "יוחנן במדבר".  יוסי בישל פסטה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Mid</td>
+        <td>Middle voice refers to reciprocal or reflexive actions, and often when no external agent is understood or implied: אבל השיטים נזכרת בספר במדבר (*על-ידי כותבי המקרא). הפסטה התבשלה (*על-ידי יוסי).</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Pass</td>
+        <td>Passive voice refers to an action that is performed on the subject, e.g., נגד רביב הוגש בסופו של דבר כתב אישום (על-ידי הפרקליטות). הפסטה בושלה ע"י יוסי.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Mood</td>
+        <td>Imp</td>
+        <td>Reserved for Imperatives, which in Hebrew appear only in the 2nd person (sing or plur), e.g. קח אותו החוצה. צאו לטייל ברחבי הארץ. תן לי את הלחם.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Irr</td>
+        <td>Reserved for beinoni, in contra-factual constructions. No Tense feature should be assigned to the beinoni in this case, e.g., היינו רגועים יותר, לו הצבא האמריקאי היה מעדכן את צה"ל בכל הנוגע לתכונותיו של הצבא העיראקי , בכוויית ובעיראק עצמה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Aspect</td>
+        <td>Prog</td>
+        <td>Reserved for beinoni, in past progressive meaning. No Tense feature should be assigned to the beinoni in this case, e.g.,  אחת לכמה שבועות הייתי נקלע לאסיפת המונים שכינס במרכז ירושלים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>VerbForm</td>
+        <td>Part  </td>
+        <td>Present Participles (beinoni): היא כיתבה את השרה הממונה על ניהול משבר הקורונה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Inf  </td>
+        <td>Infinitive forms (In all verbal templates but passives PUAL and HUFAL): בני משפחת מנגיסטו דרשו מהצלב האדום לסייע להחזיר את בנם ארצה. The first infinitive לסייע is Active in HebBinyan = PIEL The second infinitive להחזיר is also Active in HebBinyan = HIFIL    הוא השאיר את הפסטה על הכיריים להתבשל  The infinitive להתבשל is Middle in HebBinyan = HITPAEL</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Vnoun</td>
+        <td>For infinitive absolute in clear adverbial clause uses. Cp. עד רדת הלילה which is a simple ADP+NOUN  vs. ברדתו אל הבאר, מעד ונחבל בראשו Which is segmented ב|רדת|ו with ב as SCONJ+mark With רדת as VERB+advcl With ו as PRON+nsubj</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>VerbType</td>
+        <td>Mod</td>
+        <td>חלק גדול מהסצנות מרגישות לא מלוטשות, הניראות הכללית של המשחק מרגישה מיושנת, ולא בטוח שגם שדרוג החומרה שלכם יצליח לגרום לעובדה הזאת להשתנות. [VERB+csubj = בטוח←יצליח]</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Polarity</td>
+        <td>Pos</td>
+        <td>As per the HTB convention, the various forms of to be (e.g., היה, יהיו) in existential meaning are tagged VERB, and receive this value: היו אנשים בעלי אמצעים שתרמו דרך קבע לפעילות של התנועה ולפעילות של הישיבה.   Forms of יש (existential): הם פשוט תהו, נזכר לנקובסקי, "למי יש רעיונות מעניינים?"</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Neg  </td>
+        <td>Negative existential forms: אין ביניהם אנשי ציבור הרצים לכנסת בשם פתרונותיהם.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>HebBinyan (Universal Features)</td>
+        <td>PAAL</td>
+        <td>היא אמרה כי שירות התעסוקה הציע להביא עובדים מדרום לבנון, אך תנועת המושבים סירבה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>PIEL</td>
+        <td>היא הודיעה כי הוועדה תגבש הצעת חוק בנושא העובדים הזרים.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>HIFIL</td>
+        <td>רייזמן מציע שהממשלה תסבסד מחצית מעלות העסקתם של העולים בקטיף .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>HUFAL</td>
+        <td>הרבה כסף הוקדש להגות על מדינות העולם השלישי .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>PUAL</td>
+        <td>תשדירי הבחירות שלו תוארו כשנונים ביותר בארה"ב .</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>NIFAL</td>
+        <td>אנו, נפגעי המשכנתאות, נקלענו למצבנו הקשה לא בגלל ריבית נמוכה, אלא בגלל האינפלציה וההצמדה.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>HITPAEL</td>
+        <td>כך או כך, שמו של בורחס יצטרף מעתה לרשימה הארוכה של הסופרים שהפרס נמנע מהם.</td>
+    </tr>
 </table>
-
 
 ### Nominal Features
 #### Gender
